@@ -1,24 +1,36 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import AuthProvider from "./contexts/AuthProvider/AuthProvider";
+import Explore from "./Pages/Explore/Explore";
 import Home from "./Pages/Home/Home/Home";
-import Footer from "./Pages/Shared/Footer/Footer";
-import Navigation from "./Pages/Shared/Navigation/Navigation";
+import Login from "./Pages/Login/Login/Login";
+import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
+import Register from "./Pages/Login/Register/Register";
 
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        <Navigation></Navigation>
-        <Switch>
-          <Route exact path="/">
-            <Home></Home>
-          </Route>
-          <Route path="/home">
-            <Home></Home>
-          </Route>
-        </Switch>
-        <Footer></Footer>
-      </BrowserRouter>
+      <AuthProvider>
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/">
+              <Home></Home>
+            </Route>
+            <Route path="/home">
+              <Home></Home>
+            </Route>
+            <Route path="/login">
+              <Login></Login>
+            </Route>
+            <Route path="/register">
+              <Register></Register>
+            </Route>
+            <PrivateRoute path="/explore">
+              <Explore></Explore>
+            </PrivateRoute>
+          </Switch>
+        </BrowserRouter>
+      </AuthProvider>
     </div>
   );
 }
