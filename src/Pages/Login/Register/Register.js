@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
-import { Link , useLocation, useHistory} from "react-router-dom";
+import { Link , useHistory} from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 
 
@@ -8,7 +8,6 @@ import useAuth from "../../../hooks/useAuth";
 const Register = () => {
     const {user, registerUser, isLoading, authError} = useAuth();
     const [loginData, SetLoginData] = useState({});
-    const location = useLocation();
     const history = useHistory();
 
      const handleOnBlur = (e) => {
@@ -24,7 +23,7 @@ const Register = () => {
            alert('Your password didnt match')
            return;
        }
-       registerUser(loginData.email, loginData.password, location, history);
+       registerUser(loginData.email, loginData.password,loginData.name,  history);
        e.preventDefault();
      };
 
@@ -39,7 +38,7 @@ const Register = () => {
                 <Form.Label>Your name</Form.Label>
                 <Form.Control
                   onBlur={handleOnBlur}
-                  name="displayName"
+                  name="name"
                   type="text"
                   placeholder="Your Name"
                 />

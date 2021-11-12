@@ -32,12 +32,10 @@ const Navigation = () => {
               <Nav>
                 {user?.email ? (
                   <Nav>
-                    <Nav.Link className="border-end" to="/dashboard">
+                    <Nav.Link as={Link} className="border-end" to="/dashboard">
                       Dashboard
                     </Nav.Link>
-                    <Nav.Link onClick={logOut}>
-                      Logout
-                    </Nav.Link>
+                    <Nav.Link onClick={logOut}>Logout</Nav.Link>
                   </Nav>
                 ) : (
                   <Nav>

@@ -1,0 +1,12 @@
+/* exploreitems container style sheet */
+.exploreitems-container{
+    background-color: gainsboro;
+    padding: 35px 10px;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+.exploreitems-img{
+    width: 350px;
+    height: 250px;
+    border-radius: 02.5px;
+}
