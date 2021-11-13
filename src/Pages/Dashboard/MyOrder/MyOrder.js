@@ -10,7 +10,7 @@ const MyOrder = () => {
 
 
     useEffect(() => {
-        const url = `http://localhost:5000/orders?email=${user.email}`;
+        const url = `https://enigmatic-anchorage-98613.herokuapp.com/orders?email=${user.email}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setMyOrders(data))
@@ -20,7 +20,7 @@ const MyOrder = () => {
 
     //handleDelete
     const handleDeleteOrder = id => {
-        const url = `http://localhost:5000/orders/${id}`;
+        const url = `https://enigmatic-anchorage-98613.herokuapp.com/orders/${id}`;
         fetch(url, {
             method: 'DELETE'
         })

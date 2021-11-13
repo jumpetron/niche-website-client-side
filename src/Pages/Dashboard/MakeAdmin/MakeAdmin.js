@@ -12,20 +12,20 @@ const MakeAdmin = () => {
 
     const handleAdminSubmit = e =>{
         const user = {email}
-        fetch("http://localhost:5000/users", {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(user)
+        fetch("https://enigmatic-anchorage-98613.herokuapp.com/users", {
+          method: "PUT",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(user),
         })
-        .then(res => res.json())
-        .then(data => {
-            if(data.modifiedCount){
-                console.log(data)
-                setSuccess(true);
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.modifiedCount) {
+              console.log(data);
+              setSuccess(true);
             }
-        })
+          });
         e.preventDefault();
     }
     return (
