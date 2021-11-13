@@ -2,10 +2,11 @@ import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import logo from '../../../images/logo.png'
+import './Footer.css'
 
 const Footer = () => {
     return (
-      <Container className="my-5">
+      <Container className="my-5 footer">
         <Row xs={1} md={2} lg={4} sm={1} className="g-4">
           <Col>
             <img style={{ width: "150px" }} src={logo} alt="" />

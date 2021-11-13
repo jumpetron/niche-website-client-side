@@ -80,7 +80,6 @@ const Cart = () => {
                 </Card>
               </Col>
             </Row>
-
             <h1>Fill This Form For Complete Order</h1>
             <Form onSubmit={handleOrder}>
               <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -134,7 +133,6 @@ const Cart = () => {
             </Form>
           </Container>
         </div>
-        <Footer></Footer>
       </>
     );
 };
