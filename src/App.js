@@ -7,6 +7,7 @@ import Home from "./Pages/Home/Home/Home";
 import Login from "./Pages/Login/Login/Login";
 import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
 import Register from "./Pages/Login/Register/Register";
+import Error from "./Pages/Error/Error";
 
 
 function App() {
@@ -35,6 +36,9 @@ function App() {
             </PrivateRoute>
             <Route path="/products/:id">
               <Cart></Cart>
+            </Route>
+            <Route path="*">
+              <Error></Error>
             </Route>
           </Switch>
         </BrowserRouter>

@@ -1,24 +1,23 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import { Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./ExploreItems.css";
 
 const ExploreItems = (props) => {
-  const { name, picture, info, price, _id } = props.product;
+  const { name, picture, info, price, _id, brand } = props.product;
   return (
     <Container>
-      <div className="exploreitems-container">
+      <div>
         <div>
-          <img className="exploreitems-img" src={picture} alt="" />
+          <img className="img-fluid" src={picture} alt="" />
         </div>
         <div>
           <h3>{name}</h3>
-          <h5>Price: {price}$</h5>
-          <p>Shot info: {info.slice(0, 35)}</p>
+          <h5>Price:${price}</h5>
+          <p>{brand}</p>
+          <p>{info}</p>
           <Link to={`/products/${_id}`}>
-            <button type="button" className="btn btn-outline-dark">
-              PURCHASE
-            </button>
+            <Button>Buy Now</Button>
           </Link>
         </div>
       </div>

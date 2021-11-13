@@ -4,21 +4,19 @@ import { Link } from "react-router-dom";
 import "./Product.css";
 
 const Product = (props) => {
-  console.log(props.product);
-  const { name, picture, info, price, _id } = props.product;
+  const { name, picture, info, price, _id, brand } = props.product;
   return (
     <div className="product-container g-4">
-      <div>
-        <img className="product-img img-fluid" src={picture} alt="" />
+      <div className="product">
+        <img className="product-img" src={picture} alt="" />
         <h3>{name}</h3>
+        <p>{brand}</p>
         <p>{info}</p>
-        <p>{price}</p>
-        <Link to={`/products/${_id}`}>
-          <button type="button" className="btn btn-outline-danger">
-            PURCHASE
-          </button>
-        </Link>
+        <p>Price: ${price}</p>
       </div>
+      <Link to={`/products/${_id}`}>
+        <Button type="button">Buy Now</Button>
+      </Link>
     </div>
   );
 };

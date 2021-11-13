@@ -37,7 +37,7 @@ const AboutSection = () => {
               </p>
               <p>
                 <AiFillCheckCircle className="me-2 fs-4" />
-                Routine Service Available
+                Turn Your Car Into Cash
               </p>
             </div>
           </Col>

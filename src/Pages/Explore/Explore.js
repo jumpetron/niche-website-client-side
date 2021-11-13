@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import ExploreItems from "./ExploreItems/ExploreItems";
-import "./Explore.css";
-import { Container } from "react-bootstrap";
 import Navigation from "../Shared/Navigation/Navigation";
 import Footer from "../Shared/Footer/Footer";
+import { Container } from "react-bootstrap";
+import './Explore.css'
 
 const Explore = () => {
   const [products, setProducts] = useState([]);
@@ -15,18 +15,18 @@ const Explore = () => {
 
   return (
     <>
-    <Navigation></Navigation>
-        <div className="main-container">
-          <h1 className="">Our Products: {products.length}</h1>
-          <div className="d-flex justify-content-center">
-            <div className="explore-container">
-              {products.map((product) => (
-                <ExploreItems key={product.id} product={product}></ExploreItems>
-              ))}
-            </div>
+      <Navigation></Navigation>
+      <Container>
+        <h1 className="">Our Products: {products.length}</h1>
+        <div>
+          <div>
+            {products.map((product) => (
+              <ExploreItems key={product.id} product={product}></ExploreItems>
+            ))}
           </div>
         </div>
-    <Footer></Footer>
+      </Container>
+      <Footer></Footer>
     </>
   );
 };

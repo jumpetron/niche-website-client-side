@@ -1,105 +1,45 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import Slider from "react-slick";
 import { Container } from 'react-bootstrap';
-import { Swiper, SwiperSlide } from "swiper/react/swiper-react.js";
 import { FaQuoteLeft } from "react-icons/fa";
 import './Review.css'
-import "swiper/swiper-bundle.min.css";
-import "swiper/swiper.min.css";
-import "swiper/swiper-bundle.css"
+import Reviews from './Reviews/Reviews';
 
 
 const Review = () => {
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+  };
+
+  const [reviews, setReviews] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:5000/reviews")
+      .then((res) => res.json())
+      .then((data) => setReviews(data));
+  }, []);
+
     return (
       <Container className="review-section">
         <div className="text-center">
-          <FaQuoteLeft/>
+          <FaQuoteLeft />
           <h2>Testimonials</h2>
           <p>
             Visit one of the largest used car dealerships in the New York. Visit
             us today.
           </p>
         </div>
-        <Swiper
-          slidesPerView={3}
-          spaceBetween={30}
-          slidesPerGroup={3}
-          loop={true}
-          loopFillGroupWithBlank={true}
-          className="mySwiper"
-        >
-          <SwiperSlide>
-            <h5>Ahmed Foysal</h5>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Recusandae fuga mollitia molestiae voluptas laborum exercitationem
-              eos earum commodi dicta quasi.
-            </p>
-          </SwiperSlide>
-          <SwiperSlide>
-            <h5>Ahmed Foysal</h5>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Recusandae fuga mollitia molestiae voluptas laborum exercitationem
-              eos earum commodi dicta quasi.
-            </p>
-          </SwiperSlide>
-          <SwiperSlide>
-            <h5>Ahmed Foysal</h5>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Recusandae fuga mollitia molestiae voluptas laborum exercitationem
-              eos earum commodi dicta quasi.
-            </p>
-          </SwiperSlide>
-          <SwiperSlide>
-            <h5>Ahmed Foysal</h5>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Recusandae fuga mollitia molestiae voluptas laborum exercitationem
-              eos earum commodi dicta quasi.
-            </p>
-          </SwiperSlide>
-          <SwiperSlide>
-            <h5>Ahmed Foysal</h5>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Recusandae fuga mollitia molestiae voluptas laborum exercitationem
-              eos earum commodi dicta quasi.
-            </p>
-          </SwiperSlide>
-          <SwiperSlide>
-            <h5>Ahmed Foysal</h5>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Recusandae fuga mollitia molestiae voluptas laborum exercitationem
-              eos earum commodi dicta quasi.
-            </p>
-          </SwiperSlide>
-          <SwiperSlide>
-            <h5>Ahmed Foysal</h5>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Recusandae fuga mollitia molestiae voluptas laborum exercitationem
-              eos earum commodi dicta quasi.
-            </p>
-          </SwiperSlide>
-          <SwiperSlide>
-            <h5>Ahmed Foysal</h5>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Recusandae fuga mollitia molestiae voluptas laborum exercitationem
-              eos earum commodi dicta quasi.
-            </p>
-          </SwiperSlide>
-          <SwiperSlide>
-            <h5>Ahmed Foysal</h5>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Recusandae fuga mollitia molestiae voluptas laborum exercitationem
-              eos earum commodi dicta quasi.
-            </p>
-          </SwiperSlide>
-        </Swiper>
+        <div>
+          <Slider {...settings}>
+            {reviews.map((review) => (
+              <Reviews key={review.id} review={review}></Reviews>
+            ))}
+          </Slider>
+        </div>
       </Container>
     );
 };

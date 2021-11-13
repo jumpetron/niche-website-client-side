@@ -9,19 +9,19 @@ const servicing = [
   {
     name: "Browser Inventory",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed culpa cumque enim! Voluptatibus aliquid expedita saepe accusantium itaque ducimus rem voluptas",
+      "The most trusted used car dealer in Stafford, VA. Offering high-quality quality used cars for sale, with lots of vehicle options available. Call us now!",
     img: cars,
   },
   {
     name: "Services",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed culpa cumque enim! Voluptatibus aliquid expedita saepe accusantium itaque ducimus rem voluptas",
+      "Need an emergency car service near you? Sheba.xyz has experienced car service providers in Bangladesh for any car related services. Book Now.",
     img: services,
   },
   {
     name: "Finance",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed culpa cumque enim! Voluptatibus aliquid expedita saepe accusantium itaque ducimus rem voluptas",
+      "Having your own car is more of a necessity now and we are to pave you the most comfortable way to it. Your wheel is now your will.",
     img: finance,
   },
 ];
@@ -38,8 +38,7 @@ const Servicing = () => {
                 <Card.Body>
                   <Card.Title>{service.name}</Card.Title>
                   <Card.Text>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    {service.description}
                   </Card.Text>
                   <Button variant="primary">View</Button>
                 </Card.Body>

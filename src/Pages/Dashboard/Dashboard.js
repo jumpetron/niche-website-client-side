@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Nav, Navbar,Offcanvas } from 'react-bootstrap';
 import Pay from './Pay/Pay'
+import logo from '../../images/logo.png'
 import AddReview from './AddReview/AddReview'
 import {
   Switch,
@@ -23,7 +24,9 @@ const Dashboard = () => {
       <>
         <Navbar bg="light" expand={false}>
           <Container>
-            <Navbar.Brand href="#">Navbar Offcanvas</Navbar.Brand>
+            <Navbar.Brand as={Link} to="/">
+              <img style={{ width: "150px" }} src={logo} alt="logo" />
+            </Navbar.Brand>
             <Navbar.Toggle aria-controls="offcanvasNavbar" />
             <Navbar.Offcanvas
               id="offcanvasNavbar"
@@ -73,14 +76,14 @@ const Dashboard = () => {
             <Route path={`${path}/my-orders`}>
               <MyOrder></MyOrder>
             </Route>
+            <Route path={`${path}/make-admin`}>
+              <MakeAdmin></MakeAdmin>
+            </Route>
             <Route path={`${path}/pay`}>
               <Pay></Pay>
             </Route>
             <Route path={`${path}/add-review`}>
               <AddReview></AddReview>
-            </Route>
-            <Route path={`${path}/make-admin`}>
-              <MakeAdmin></MakeAdmin>
             </Route>
             <Route path={`${path}/add-product`}>
               <AddProduct></AddProduct>

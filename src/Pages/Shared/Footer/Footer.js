@@ -38,8 +38,8 @@ const Footer = () => {
             </p>
           </Col>
           <Col>
-            <h3>+8801635130977</h3>
-            <p>support@gmail.com</p>
+            <h3>573-270-8341</h3>
+            <p>support@motorev.com</p>
             <p>
               West 12th Street <br />
               New York, NY, USA
